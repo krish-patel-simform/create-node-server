@@ -1,6 +1,6 @@
 {
   "name": "create-my-node-server",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "CLI for creating node backend projects",
   "main": "dist/index.js",
   "bin": {
