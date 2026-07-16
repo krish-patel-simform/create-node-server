@@ -1,5 +1,10 @@
 import { text, select, cancel, isCancel } from "@clack/prompts";
-import type { ProjectConfig } from "../types/project.types.js";
+import type {
+  ProjectConfig,
+  Framework,
+  Language,
+} from "../types/project.types.js";
+import { FRAMEWORK_OPTIONS, LANGUAGE_OPTIONS } from "../consts.ts";
 
 export async function getProjectConfig(): Promise<ProjectConfig> {
   const projectName = await text({
@@ -15,20 +20,7 @@ export async function getProjectConfig(): Promise<ProjectConfig> {
   const framework = await select({
     message: "Choose framework",
 
-    options: [
-      {
-        value: "express",
-        label: "Express",
-      },
-      {
-        value: "fastify",
-        label: "Fastify",
-      },
-      {
-        value: "hono",
-        label: "Hono",
-      },
-    ],
+    options: FRAMEWORK_OPTIONS as any,
   });
 
   if (isCancel(framework)) {
@@ -39,16 +31,7 @@ export async function getProjectConfig(): Promise<ProjectConfig> {
   const language = await select({
     message: "Choose language",
 
-    options: [
-      {
-        value: "typescript",
-        label: "TypeScript",
-      },
-      {
-        value: "javascript",
-        label: "JavaScript",
-      },
-    ],
+    options: LANGUAGE_OPTIONS as any,
   });
 
   if (isCancel(language)) {
@@ -58,7 +41,7 @@ export async function getProjectConfig(): Promise<ProjectConfig> {
 
   return {
     projectName: String(projectName),
-    framework,
-    language,
+    framework: framework as Framework,
+    language: language as Language,
   };
 }

@@ -1,6 +1,7 @@
-export type Language = "typescript" | "javascript";
+import type { FRAMEWORK_OPTIONS, LANGUAGE_OPTIONS } from "../consts.ts";
 
-export type Framework = "express" | "fastify" | "hono";
+export type Language = (typeof LANGUAGE_OPTIONS)[number]["value"];
+export type Framework = (typeof FRAMEWORK_OPTIONS)[number]["value"];
 
 export interface ProjectConfig {
   projectName: string;

@@ -6,13 +6,13 @@ import {
 } from "./generator/template.service.ts";
 
 async function main() {
-  await copyTemplate("templates/basic", "my-api");
+  // await copyTemplate("templates/basic", "my-api");
 
-  await replacePlaceholders("my-api", {
-    PROJECT_NAME: "my-api",
-    AUTHOR: "Krish",
-  });
-  //   await startCLI();
+  // await replacePlaceholders("my-api", {
+  //   PROJECT_NAME: "my-api",
+  //   AUTHOR: "Krish",
+  // });
+  await startCLI();
 }
 
 main().catch((error) => {
