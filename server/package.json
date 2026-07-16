@@ -1,8 +1,11 @@
 {
-  "name": "server",
-  "version": "1.0.0",
+  "name": "create-node-server",
+  "version": "1.1.0",
   "description": "CLI for creating node backend projects",
   "main": "dist/index.js",
+  "bin": {
+    "create-node-server" : "./dist/index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "tsx watch src/index.ts",
@@ -12,7 +15,7 @@
   "keywords": [],
   "author": "",
   "license": "MIT",
-  "type": "commonjs",
+  "type": "module",
   "devDependencies": {
     "@types/node": "^26.1.1",
     "tsx": "^4.23.1",
