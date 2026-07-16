@@ -1,6 +1,11 @@
 #!/usr/bin/env node
-import { startCLI } from "./cli.ts";
+import { startCLI } from "./cli.js";
 
-console.log("🚀 Welcome to the create-node-server cli package");
+async function main() {
+  await startCLI();
+}
 
-startCLI();
+main().catch((error) => {
+  console.log(error);
+  process.exit(1);
+});
