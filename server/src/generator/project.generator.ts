@@ -13,12 +13,27 @@ async function projectExists(projectPath: string): Promise<boolean> {
   }
 }
 
+async function templateExists(path: string): Promise<boolean> {
+  try {
+    await access(path);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 export async function generateProject(config: ProjectConfig): Promise<void> {
   const templatePath = path.resolve(
     "templates",
     config.framework,
     config.language,
   );
+
+  if (!templateExists(templatePath)) {
+    throw new Error(
+      `Template for "${config.framework}" ${config.language} not found.`,
+    );
+  }
 
   const destinationPath = path.resolve(config.projectName);
   if (await projectExists(destinationPath)) {
