@@ -1,5 +1,5 @@
 {
-  "name": "create-node-server",
+  "name": "create-node-app",
   "version": "1.1.0",
   "description": "CLI for creating node backend projects",
   "main": "dist/index.js",
