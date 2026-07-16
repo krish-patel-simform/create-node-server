@@ -24,12 +24,13 @@ async function templateExists(path: string): Promise<boolean> {
 
 export async function generateProject(config: ProjectConfig): Promise<void> {
   const templatePath = path.resolve(
-    "templates",
+    import.meta.dirname,
+    "../../templates",
     config.framework,
     config.language,
   );
 
-  if (!templateExists(templatePath)) {
+  if (!(await templateExists(templatePath))) {
     throw new Error(
       `Template for "${config.framework}" ${config.language} not found.`,
     );
