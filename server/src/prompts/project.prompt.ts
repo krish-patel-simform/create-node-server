@@ -9,7 +9,13 @@ import { FRAMEWORK_OPTIONS, LANGUAGE_OPTIONS } from "../consts.ts";
 export async function getProjectConfig(): Promise<ProjectConfig> {
   const projectName = await text({
     message: "What is your project name ?",
-    placeholder: "my-server",
+    placeholder: "server",
+    defaultValue: "server",
+    validate(value) {
+      if (value && value.trim().length === 0) {
+        return "Project name is required!";
+      }
+    },
   });
 
   if (isCancel(projectName)) {

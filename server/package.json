@@ -1,6 +1,6 @@
 {
   "name": "create-my-node-server",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "CLI for creating node backend projects",
   "main": "dist/index.js",
   "bin": {
@@ -12,8 +12,26 @@
     "build": "tsc",
     "start": "node dist/index.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "cli",
+    "create-node-server",
+    "node",
+    "express",
+    "typescript",
+    "backend",
+    "generator",
+    "scaffold",
+    "starter"
+  ],
+  "author": "krish-patel-simform",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krish-patel-simform/create-node-server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/krish-patel-simform/create-node-server/issues"
+  },
+  "homepage": "https://github.com/krish-patel-simform/create-node-server#readme",
   "license": "MIT",
   "type": "module",
   "devDependencies": {
