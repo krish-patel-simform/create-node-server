@@ -1,0 +1,10 @@
+import type { FastifyInstance } from 'fastify';
+
+export async function registerRoutes(app: FastifyInstance): Promise<void> {
+  app.get('/health', async (_request, _reply) => {
+    return {
+      success: true,
+      message: 'Server is healthy',
+    };
+  });
+}
