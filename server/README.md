@@ -27,6 +27,7 @@ create-my-node-server
 ## How to use
 
 Run the command and the interactive prompt will ask you:
+
 1. **What is your project name?** (default: `server`)
 2. **Choose framework** (e.g., Express)
 3. **Choose language** (e.g., TypeScript)
