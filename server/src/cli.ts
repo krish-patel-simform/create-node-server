@@ -1,4 +1,12 @@
-import { intro, outro, confirm, isCancel, cancel, note, spinner } from "@clack/prompts";
+import {
+  intro,
+  outro,
+  confirm,
+  isCancel,
+  cancel,
+  note,
+  spinner,
+} from "@clack/prompts";
 import { execSync } from "node:child_process";
 import { getProjectConfig } from "./prompts/project.prompt.js";
 import { generateProject } from "./generator/project.generator.js";
