@@ -7,10 +7,6 @@ export const FRAMEWORK_OPTIONS = [
     value: "fastify",
     label: "Fastify",
   },
-  {
-    value: "hono",
-    label: "Hono",
-  },
 ] as const;
 
 export const LANGUAGE_OPTIONS = [
