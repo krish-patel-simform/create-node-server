@@ -1,4 +1,11 @@
-import { cp, readFile, readdir, rename, stat, writeFile } from "node:fs/promises";
+import {
+  cp,
+  readFile,
+  readdir,
+  rename,
+  stat,
+  writeFile,
+} from "node:fs/promises";
 import path from "node:path";
 
 export async function copyTemplate(
